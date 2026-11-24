@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Timeline | Séries e especiais</title>
+  <meta name="description" content="Catálogo de séries, temporadas e especiais relacionados ao Universo Cinematográfico Marvel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div id="site-header"></div>
+  <main id="conteudo">
+    <section class="pagina-topo" aria-labelledby="pagina-titulo">
+      <div class="container">
+        <p class="eyebrow">Catálogo</p>
+        <h1 id="pagina-titulo" class="pagina-topo__titulo">Séries do <span class="destaque">MCU</span></h1>
+        <p class="pagina-topo__texto">Explore temporadas, animações e especiais ligados ao universo Marvel. Pesquise títulos, filtre por categoria ou plataforma e escolha a ordem de exibição.</p>
+      </div>
+    </section>
+
+    <section class="secao secao--catalogo" aria-label="Catálogo de séries e especiais">
+      <div class="container">
+        <div class="filtros">
+          <div class="filtros__linha">
+            <div class="busca">
+              <label class="sr-only" for="busca-serie">Buscar por título</label>
+              <svg class="busca__icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+              <input class="busca__campo" id="busca-serie" type="search" placeholder="Buscar por título..." autocomplete="off">
+            </div>
+            <div class="ordem" role="group" aria-label="Ordem de exibição">
+              <button type="button" class="ordem__botao" data-ordem="cronologica" aria-pressed="true">Ordem cronológica</button>
+              <button type="button" class="ordem__botao" data-ordem="lancamento" aria-pressed="false">Ordem de lançamento</button>
+            </div>
+          </div>
+          <div class="filtros__grupo">
+            <span class="filtros__rotulo" id="rotulo-categorias">Categoria</span>
+            <div class="chips" id="filtro-categorias" role="group" aria-labelledby="rotulo-categorias"></div>
+          </div>
+          <div class="filtros__grupo">
+            <span class="filtros__rotulo" id="rotulo-formatos">Formato</span>
+            <div class="chips" id="filtro-formatos" role="group" aria-labelledby="rotulo-formatos"></div>
+          </div>
+          <div class="filtros__grupo">
+            <span class="filtros__rotulo" id="rotulo-plataformas">Origem</span>
+            <div class="chips" id="filtro-plataformas" role="group" aria-labelledby="rotulo-plataformas"></div>
+          </div>
+        </div>
+
+        <p class="nota">Cada temporada é apresentada separadamente para facilitar sua integração à cronologia unificada. A ordem cronológica é uma organização editorial do projeto: posições discutíveis ou ainda não confirmadas são identificadas nos cartões. A categoria indica como a produção é tratada neste catálogo, não substitui uma declaração oficial de cânone.</p>
+        <p class="resultado" id="contagem-series" role="status" aria-live="polite"></p>
+        <ul class="catalogo" id="catalogo-series"></ul>
+        <div class="vazio" id="vazio-series" hidden>
+          <h2 class="vazio__titulo">Nenhum título encontrado</h2>
+          <p class="vazio__texto">Não encontramos produções com essa busca e esses filtros. Tente alterar os critérios.</p>
+          <button type="button" class="btn btn--secundario" id="limpar-filtros-series">Limpar filtros</button>
+        </div>
+        <section class="series-exclusoes" aria-labelledby="exclusoes-titulo">
+          <h2 id="exclusoes-titulo">Produções não incluídas neste catálogo</h2>
+          <p>Algumas produções da Marvel Television e animações de universos alternativos não aparecem nos cartões porque este catálogo prioriza obras associadas à cronologia do MCU e os recortes definidos para o projeto.</p>
+          <p><strong>Exemplos:</strong> <em>Agents of S.H.I.E.L.D.</em>, <em>Agent Carter</em> (série), <em>Inhumans</em>, <em>Runaways</em>, <em>Cloak &amp; Dagger</em>, <em>Helstrom</em>, <em>X-Men '97</em>, <em>Marvel Zombies</em> e <em>Seu Amigão da Vizinhança Homem-Aranha</em>. A ausência nesta página não significa, por si só, que essas obras não tenham qualquer relação histórica ou narrativa com produções do MCU.</p>
+        </section>
+        <noscript><p class="nota">Ative o JavaScript no navegador para visualizar o catálogo.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/main.js" defer></script>
+  <script src="js/series.js" defer></script>
+</body>
+</html>

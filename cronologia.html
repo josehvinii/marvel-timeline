@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte a cronologia unificada do Universo Cinematográfico Marvel, com filmes, temporadas e especiais em uma única sequência.">
+  <title>Marvel Timeline | Cronologia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div id="site-header"></div>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="hero__escala" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__conteudo">
+          <p class="eyebrow">A história em uma só sequência</p>
+          <h1 class="hero__titulo" id="hero-titulo">Cronologia <span class="destaque">Marvel</span></h1>
+          <p class="hero__texto">Filmes, temporadas e especiais reunidos em uma única linha do tempo. Escolha como explorar e encontre sua próxima história.</p>
+          <div class="hero__acoes">
+            <a class="btn btn--primario" href="#linha-do-tempo">Explorar cronologia</a>
+            <a class="btn btn--secundario" href="filmes.html">Ver catálogo de filmes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--catalogo" id="linha-do-tempo" aria-labelledby="cronologia-titulo">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <p class="eyebrow">Do passado ao futuro</p>
+          <h2 class="secao__titulo" id="cronologia-titulo">Linha do tempo completa</h2>
+          <p class="secao__descricao">A ordem cronológica combina a sequência dos filmes com as posições individuais das temporadas e especiais cadastradas no projeto.</p>
+        </div>
+
+        <div class="timeline-controles">
+          <label class="busca" for="busca-cronologia">
+            <span class="busca__icone" aria-hidden="true">⌕</span>
+            <input id="busca-cronologia" type="search" placeholder="Buscar filme, série ou personagem..." autocomplete="off">
+          </label>
+          <div class="filtros__grupo">
+            <span class="filtros__rotulo" id="rotulo-tipos">Exibir</span>
+            <div class="chips" id="filtro-tipos" role="group" aria-labelledby="rotulo-tipos"></div>
+          </div>
+          <div class="filtros__grupo">
+            <span class="filtros__rotulo" id="rotulo-confianca">Confiabilidade da posição</span>
+            <div class="chips" id="filtro-confianca" role="group" aria-labelledby="rotulo-confianca"></div>
+          </div>
+          <div class="ordenacao" role="group" aria-label="Ordenar cronologia">
+            <span class="filtros__rotulo">Ordenação</span>
+            <button class="btn btn--secundario is-active" type="button" data-ordem="cronologica" aria-pressed="true">Ordem cronológica</button>
+            <button class="btn btn--secundario" type="button" data-ordem="lancamento" aria-pressed="false">Ordem de lançamento</button>
+          </div>
+        </div>
+
+        <p class="nota timeline-nota">Importante: a sequência é uma organização editorial do Marvel Timeline, não uma reprodução certificada de uma lista oficial. Os filmes mantêm a ordem cronológica já cadastrada. As temporadas e os especiais usam posições próprias; quando a posição não é oficial ou não está suficientemente estabelecida, isso é indicado no cartão. Obras de realidades alternativas aparecem identificadas como debatidas.</p>
+        <p class="resultado" id="contagem-cronologia" role="status" aria-live="polite"></p>
+        <ol class="timeline-lista" id="lista-cronologia" aria-label="Produções em ordem cronológica"></ol>
+        <div class="vazio" id="vazio-cronologia" hidden>
+          <h2 class="vazio__titulo">Nenhuma produção encontrada</h2>
+          <p class="vazio__texto">Tente outro termo ou altere os filtros.</p>
+          <button type="button" class="btn btn--secundario" id="limpar-cronologia">Limpar filtros</button>
+        </div>
+        <noscript><p class="nota">Ative o JavaScript para visualizar a cronologia.</p></noscript>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js" defer></script>
+  <script src="js/movies.js" defer></script>
+  <script src="js/series.js" defer></script>
+  <script src="js/timeline.js" defer></script>
+</body>
+</html>

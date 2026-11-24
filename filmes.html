@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Timeline | Filmes</title>
+  <meta name="description" content="Catálogo dos filmes do Universo Cinematográfico Marvel em ordem cronológica ou de lançamento, com filtro por fase e busca por título.">
+
+  <!-- Fontes: Bebas Neue (títulos) e Inter (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho inserido pelo main.js -->
+  <div id="site-header"></div>
+
+  <main id="conteudo">
+
+    <!-- ========== TOPO DA PÁGINA ========== -->
+    <section class="pagina-topo" aria-labelledby="pagina-titulo">
+      <div class="container">
+        <p class="eyebrow">Catálogo</p>
+        <h1 id="pagina-titulo" class="pagina-topo__titulo">Filmes do <span class="destaque">MCU</span></h1>
+        <p class="pagina-topo__texto">
+          Todos os filmes da continuidade principal do Universo Cinematográfico Marvel.
+          Escolha a ordem que preferir, filtre por fase ou procure um título.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== CATÁLOGO ========== -->
+    <section class="secao secao--catalogo" aria-label="Catálogo de filmes">
+      <div class="container">
+
+        <div class="filtros">
+          <div class="filtros__linha">
+            <div class="busca">
+              <label class="sr-only" for="busca-filme">Buscar filme por título</label>
+              <svg class="busca__icone" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.5-3.5"></path>
+              </svg>
+              <input class="busca__campo" id="busca-filme" type="search"
+                     placeholder="Buscar por título..." autocomplete="off">
+            </div>
+
+            <div class="ordem" role="group" aria-label="Ordem de exibição">
+              <button type="button" class="ordem__botao" data-ordem="cronologica" aria-pressed="true">Ordem cronológica</button>
+              <button type="button" class="ordem__botao" data-ordem="lancamento" aria-pressed="false">Ordem de lançamento</button>
+            </div>
+          </div>
+
+          <div class="filtros__fases">
+            <span class="filtros__rotulo" id="rotulo-fases">Fase</span>
+            <!-- Botões de fase criados pelo movies.js -->
+            <div class="chips" id="filtro-fases" role="group" aria-labelledby="rotulo-fases"></div>
+          </div>
+        </div>
+
+        <p class="nota">
+          A ordem cronológica segue a sequência da linha do tempo do Disney+. Ela não é uma
+          verdade única, porque o MCU tem eventos simultâneos e viagens no tempo. Os cartões com
+          “Observação” explicam os casos mais debatidos. Os números contam apenas os filmes.
+        </p>
+
+        <p class="resultado" id="contagem" role="status"></p>
+
+        <ul class="catalogo" id="catalogo-filmes"></ul>
+
+        <!-- Mensagem exibida quando nenhum filme combina com os filtros -->
+        <div class="vazio" id="vazio" hidden>
+          <h2 class="vazio__titulo">Nenhum filme encontrado</h2>
+          <p class="vazio__texto">
+            Nenhum filme combina com a busca e a fase escolhidas. Confira a grafia do título
+            ou tente outra fase.
+          </p>
+          <button type="button" class="btn btn--secundario" id="limpar-filtros">Limpar filtros</button>
+        </div>
+
+        <noscript>
+          <p class="nota">Ative o JavaScript no navegador para ver o catálogo de filmes.</p>
+        </noscript>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé inserido pelo main.js -->
+  <div id="site-footer"></div>
+
+  <!-- A ordem importa: main.js primeiro (cria funções auxiliares), movies.js depois -->
+  <script src="js/main.js" defer></script>
+  <script src="js/movies.js" defer></script>
+</body>
+</html>

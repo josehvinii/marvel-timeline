@@ -1,0 +1,2 @@
+Os pôsteres serão salvos aqui pelo script baixar_posteres.py.
+Formato: <id-do-filme>.jpg
